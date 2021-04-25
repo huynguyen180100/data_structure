@@ -49,20 +49,20 @@ def findEmpty(q):
                 return d,c
     return None
 #Ham kiem tra tinh hop le cua mot cau do
-def test(q, value, col ,row):
+def test(q, value, row ,col):
     for i in range(len(q[0])):
-        if q[i][row] == value and i!= col:
+        if q[i][col] == value and i!= row:
             return False
     for i in range(len(q)):
-        if q[col][i] == value and i != row:
+        if q[row][i] == value and i != col:
             return False
     
-    x = row // 3
-    y = col // 3
+    x = col // 3
+    y = row // 3
 
     for i in range(y*3,y*3+3):
         for j in range(x*3,x*3+3):
-            if q[i][j] == value and i!= col and j!= row :
+            if q[i][j] == value and i!= row and j!= col :
                 return False
     return True
 sudoku(cau_do)
